@@ -1,1 +1,12 @@
+Project: PRJNA397172
+The aim is to discover the differentially expressed tumor genes in pancreatic cancer
+Secondary Study Accession: SRP114835
+Study Title: RNA-seq of pancreatic cancer
+Center Name: RNA-seq
+
+PROJECT-ID: 397172
+
+OPEN TERMINAL 
+ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR589/007/SRR5896247/SRR5896247.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR589/008/SRR5896248/SRR5896248.fastq.gz
 
