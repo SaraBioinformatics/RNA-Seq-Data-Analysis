@@ -1,12 +1,8 @@
-####for single end reads###
-
-java -jar trimmomatic-0.35.jar SE -phred33 input.fq.gz output.fq.gz ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
-
-
-java -jar trimmomatic-0.39.jar SE -phred33 SRR5896247.fastq.gz output47.fq.gz ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
-
-
- ###paired end reads
- java -jar trimmomatic-0.39.jar PE input_forward.fq.gz input_reverse.fq.gz output_forward_paired.fq.gz output_forward_unpaired.fq.gz output_reverse_paired.fq.gz output_reverse_unpaired.fq.gz ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:3 TRAILING:3 MINLEN:36
-
-
+#####trim_galore use only for paired end reads
+##example
+USAGE: trim_galore [options] <filename(s)> option== --stringency 13 -q 30 --paired , --gzip
+trim_galore --stringency 13 -q 30 --paired --gzip SRR3309279_1.fastq.gz SRR3309279_2.fastq.gz -o trim_galore(single reads)
+cat rr | while read i; do cd $i ; trim_galore --stringency 13 -q 30 --paired *1.fastq.gz *2.fastq.gz -o trim_galore\_$i ;cd .. ; done(all reads)
+trim file run in fastq for check adapter remove or not
+catr rr |while read i; do cd $i ; fastqc *.gz ; cd .. ; done( create html files of raw reads(quality control
+for trimimng reads))
