@@ -1,6 +1,6 @@
 ##install trimglore
 
-##sudo apt install pipx python3-venv
+sudo apt install pipx python3-venv
 
 # Check that cutadapt is installed
 cutadapt --version
@@ -23,7 +23,7 @@ cutadapt-venv/bin/pip --upgrade pip
 cutadapt-venv/bin/pip install cutadapt
 ~/TrimGalore-0.6.10/trim_galore
 
-##Run trimgalore
+
 
 
 
