@@ -1,0 +1,46 @@
+###Download trimmomatic-0.39 
+Update the package index:
+# sudo apt-get update
+Install trimmomatic deb package:
+# sudo apt-get install trimmomatic
+wget http://archive.ubuntu.com/ubuntu/pool/universe/t/trimmomatic/trimmomatic_0.39+dfsg-1_all.deb
+
+#########Description
+Trimmomatic performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.
+
+The current trimming steps are:
+
+ILLUMINACLIP: Cut adapter and other illumina-specific sequences from the read.
+SLIDINGWINDOW: Perform a sliding window trimming, cutting once the average quality within the window falls below a threshold.
+LEADING: Cut bases off the start of a read, if below a threshold quality
+TRAILING: Cut bases off the end of a read, if below a threshold quality
+CROP: Cut the read to a specified length
+HEADCROP: Cut the specified number of bases from the start of the read
+MINLEN: Drop the read if it is below a specified length
+TOPHRED33: Convert quality scores to Phred-33
+TOPHRED64: Convert quality scores to Phred-64
+How to Run in terminal Trimmomatic
+
+Paired End Mode:
+java -jar <path to trimmomatic.jar> PE [-threads <threads] [-phred33 | -phred64] [-trimlog <logFile>] <input 1> <input 2> <paired output 1> <unpaired output 1> <paired output 2> <unpaired output 2> <step 1> ...
+
+or
+
+java -classpath <path to trimmomatic jar> org.usadellab.trimmomatic.TrimmomaticPE [-threads <threads>] [-phred33 | -phred64] [-trimlog <logFile>] <input 1> <input 2> <paired output 1> <unpaired output 1> <paired output 2> <unpaired output 2> <step 1> ...
+
+Single End Mode:
+java -jar <path to trimmomatic jar> SE [-threads <threads>] [-phred33 | -phred64] [-trimlog <logFile>] <input> <output> <step 1> ...
+
+or
+
+java -classpath <path to trimmomatic jar> org.usadellab.trimmomatic.TrimmomaticSE [-threads <threads>] [-phred33 | -phred64] [-trimlog <logFile>] <input> <output> <step 1> ...
+
+If no quality score is specified, phred-64 is the default. This will be changed to an 'autodetected' quality score in a future version.
+
+Specifying a trimlog file creates a log of all read trimmings, indicating the following details:
+
+the read name
+the surviving sequence length
+the location of the first surviving base, aka. the amount trimmed from the start
+the location of the last surviving base in the original read
+the amount trimmed from the end
