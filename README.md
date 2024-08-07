@@ -1,4 +1,8 @@
-# RNA-Seq-Data-Analysis
+# RNA-Seq-Data-Analysis Workflow
+
+<img align="right" alt="coding" width ="800" src= "https://miro.medium.com/v2/resize:fit:680/0*EcHZSxOaAq-iNKIN.png">
+
+
 Analyzing RNA-seq data involves several steps to process raw sequencing reads into interpretable results. Here's a generalized pipeline for RNA-seq data analysis:
 
 Quality Control (QC):
